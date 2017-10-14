@@ -1,0 +1,120 @@
+header.masthead {
+  background: url('/../../assets/IMG_3679.JPG') no-repeat center bottom scroll;
+  /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.48), rgba(91, 97, 99, 0.26)), url("") no-repeat center bottom fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+header.masthead>.overlay {
+  padding: 15rem 0;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.6);
+}
+.social-nav{
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  margin: 1em 0 0;
+}
+
+.social-nav li {
+  display: inline-block;
+  margin: 0 6px;
+}
+.social-nav a{
+  display: inline-block;
+  float: none;
+  width: 35px;
+  height: 35px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 35px;
+  background: #000;
+  position: relative;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.model-3d-0 a {
+  background: #5C5B5B;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+input[type="submit"], input[type="reset"], a {
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -ms-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+a.facebook .front {
+  background: #3b5998;
+}
+
+.model-3d-0 .front, .model-3d-0 .back {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateZ(18px);
+  -moz-transform: translateZ(18px);
+  -ms-transform: translateZ(18px);
+  -o-transform: translateZ(18px);
+  transform: translateZ(18px);
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  -o-backface-visibility: visible;
+  backface-visibility: visible;
+  color: #212121;
+  font-size: 12px;
+}
+
+.w3_agile_social .front i {
+  color: #fff;
+  font-size: 12px;
+}
+
+.twitter .back, .facebook .back, .instagram .back, .linkedin .back {
+  background: #fff;
+}
+
+.model-3d-0 .back {
+  -webkit-transform: rotateX(90deg) translateZ(18px);
+  -moz-transform: rotateX(90deg) translateZ(18px);
+  -ms-transform: rotateX(90deg) translateZ(18px);
+  -o-transform: rotateX(90deg) translateZ(18px);
+  transform: rotateX(90deg) translateZ(18px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.w3_agile_social .back i {
+  color: #000;
+  font-size: 12px;
+}
+
+a.twitter .front {
+  background: #00acee;
+}
+a.instagram .front {
+  background: #f77737;
+}
+a.linkedin .front {
+  background: #194886;
+}
+
