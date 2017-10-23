@@ -9,9 +9,19 @@
   <!--</div>-->
     <div class="col-md-4">
       <h5 class="text-center">Maps</h5>
+      <!-- this creates a google map on the page with the given lat/lng from -->
+      <!-- the component as the initial center of the map: -->
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
     </div>
   <div class="col-md-4">
-    <h5 class="text-center">Contact Me</h5>
+    <h5 class="text-center"> Contact Me</h5>
+    <form class="form-group" action="">
+      <input class="form-control" type="text">
+      <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+      <button class ="btn btn-block btn-primary">Submit</button>
+    </form>
 
   </div>
   <div class="col-md-1"></div>

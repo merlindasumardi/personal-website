@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
   }
-  lat: number = 51.678418;
-  lng: number = 7.809007;
 
+  lat: number = -6.192131;
+  lng: number = 106.755973;
 }
