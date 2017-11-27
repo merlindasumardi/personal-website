@@ -4,66 +4,33 @@
     <div class="col-md-4">
       <ul>
         <h5><i class="fa fa-cogs"></i> Technical Skills</h5>
-        <li class="skill_type">
-          <p>PHP</p>
+        <ng-container *ngFor="let skill of skill.skills">
+        <li class="skill_type" *ngIf="skill.skillCategory  == 'Technical'">
+          <p>{{skill.skillName}}</p>
           <div class="progress">
-          <div class="progress-bar bg-success progress_animation" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+          <div class="progress-bar progress_animation" ngClass="{
+            'bg-danger' : skill.skillScore === 25,
+            'bg-warning ' : skill.skillScore === 50,
+            'bg-info' : skill.skillScore === 75,
+            'bg-success' : skill.skillScore === 100,
+          }" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{skill.skillScore}}%</div>
         </div>
         </li>
-        <li class="skill_type">
-          <p>Javascript</p>
-          <div class="progress">
-            <div class="progress-bar bg-info progress_animation" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-          </div>
-        </li>
-        <li class="skill_type">
-          <p>Angular4</p>
-          <div class="progress">
-            <div class="progress-bar bg-warning progress_animation" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-          </div>
-        </li>
-        <li class="skill_type">
-          <p>NodeJs</p>
-          <div class="progress">
-            <div class="progress-bar bg-danger progress_animation" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-          </div>
-        </li >
-        <li class="skill_type">
-          <p>Java</p>
-          <div class="progress">
-            <div class="progress-bar bg-success progress_animation" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-          </div>
-        </li>
+        </ng-container>
       </ul>
-
     </div>
+
     <div class="col-md-4">
       <ul>
         <h5><i class="fa fa-key"></i> Personal Skills</h5>
-        <li class="skill_type">
+        <ng-container *ngFor="let skill of skill.skills">
+        <li class="skill_type" *ngIf="skill.skillCategory === 'Managerial'">
           <p>Leadership</p>
           <div class="progress">
             <div class="progress-bar bg-success progress_animation" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
           </div>
         </li>
-        <li class="skill_type">
-          <p>Communication</p>
-          <div class="progress">
-            <div class="progress-bar bg-info progress_animation" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-          </div>
-        </li>
-        <li class="skill_type">
-          <p>Teamwork</p>
-          <div class="progress">
-            <div class="progress-bar bg-warning progress_animation" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-          </div>
-        </li>
-        <li class="skill_type">
-          <p>Public Speaking</p>
-          <div class="progress">
-            <div class="progress-bar bg-danger progress_animation" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-          </div>
-        </li >
+        </ng-container>
       </ul>
     </div>
     <div class="col-md-4">
