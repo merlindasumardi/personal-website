@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Http, Response} from "@angular/http";
+import { AgmCoreModule } from '@agm/core';
+import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -28,5 +29,21 @@ export class SkillsComponent implements OnInit {
       console.log(data);
       this.skill = {skills: data};
     });
+  }
+
+  getWidth(score) {
+    //console.log(score);
+    switch ( score ) {
+      case 25 :
+      return '25%';
+      case 50 :
+      return '50%';
+      case 75 :
+      return '75%';
+      case 100 :
+      return '100%' ;
+
+
+    }
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 
 @Component({
@@ -7,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  private apiUrl = 'http://localhost:3000/contact';
+  contact: any = {};
 
-  constructor() { }
+  constructor(private http: Http) {
+
+   }
+
+   zoom: number = 20;
+   lat: number = -6.192131;
+   lng: number = 106.755973;
 
   ngOnInit() {
   }
-
-  lat: number = -6.192131;
-  lng: number = 106.755973;
 }

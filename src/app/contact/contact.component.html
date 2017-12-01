@@ -11,7 +11,7 @@
       <h5 class="text-center">Maps</h5>
       <!-- this creates a google map on the page with the given lat/lng from -->
       <!-- the component as the initial center of the map: -->
-      <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
         <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
       </agm-map>
     </div>
