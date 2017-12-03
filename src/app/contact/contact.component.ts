@@ -9,11 +9,11 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  private apiUrl = 'http://localhost:3000/contact';
+  private apiUrl = 'http://localhost:3000/aboutme';
   contact: any = {};
 
   constructor(private http: Http) {
-
+    
    }
 
    zoom: number = 17;
