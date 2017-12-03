@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
 
    }
 
-   zoom: number = 20;
+   zoom: number = 17;
    lat: number = -6.192131;
    lng: number = 106.755973;
 

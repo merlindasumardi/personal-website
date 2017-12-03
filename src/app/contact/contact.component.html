@@ -1,29 +1,38 @@
-<div>
-  <h2 class="text-center">Contact Me</h2>
-  <div class="row">
-  <div class="col-md-1"></div>
-  <!--<div class="col-md-3">-->
-    <!--<h5 class="text-center">Address</h5>-->
-    <!--<span><i class="fa fa-phone"></i></span>-->
-    <!--<span>+6282114529397</span>-->
-  <!--</div>-->
-    <div class="col-md-4">
-      <h5 class="text-center">Maps</h5>
-      <!-- this creates a google map on the page with the given lat/lng from -->
-      <!-- the component as the initial center of the map: -->
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-      </agm-map>
-    </div>
-  <div class="col-md-4">
-    <h5 class="text-center"> Contact Me</h5>
-    <form class="form-group" action="">
-      <input class="form-control" type="text">
-      <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
-      <button class ="btn btn-block btn-primary">Submit</button>
-    </form>
-
-  </div>
-  <div class="col-md-1"></div>
-  </div>
+<header class="masthead">
+<div class="overlay">
+  <h2 class="text-center" style="color: white">Contact Me</h2>
+  <p class="text-center" style="color:bisque"><i>"Anyone who stop learning is old, anyone who keeps learning is stays young." -Henry Ford-</i></p>
+  <h5 class="text-center" style="color: white">merlinda.sumardi@gmail.com</h5>
+  <p  class="text-center" style="color:aquamarine">+6282114529397</p>
+  <p></p>
+</div>
+</header>
+<br>
+<div class="container">
+    <div class="row">
+          <div class="col-md-5 map" style="text-align:center">
+            <!-- this creates a google map on the page with the given lat/lng from -->
+            <!-- the component as the initial center of the map: -->
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+          </div>
+        <div class="col-md-6">
+          <h3 class="text-center">Say Hello</h3>
+          <form class="form-group" action="">
+            <label for="name">Name</label>
+            <input class="form-control" type="text">
+            <label for="email">Email</label>
+            <input class="form-control" type="text">
+            <label for="subject">Subject</label>
+            <input class="form-control" type="text">
+            <label for="message">Message</label>
+            <textarea class="form-control" name="" id="" cols="10" rows="5"></textarea>
+            <br>
+            <div style="text-align:center"><button class ="btn btn-success">Submit</button></div>
+          </form>
+      
+        </div>
+        <div class="col-md-1"></div>
+        </div>
 </div>

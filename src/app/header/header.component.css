@@ -1,11 +1,12 @@
 .logo{
-  font-family:"Casablanca Noir Personal Use";
-  color: orangered;
-  font-size: 35px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:cornflowerblue;
+  font-size: 25px;
 }
 .menu{
-  font-family: Candara;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 18px;
+  color: black;
 }
 
 .nav_bg{
