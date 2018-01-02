@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
 import { SmoothScrollToDirective, SmoothScrollDirective } from 'ng2-smooth-scroll';
+import { Ng2ScrollableModule } from 'ng2-scrollable';
 
 const googleMapKey = AgmCoreModule.forRoot({
   apiKey: 'AIzaSyD9KRgBgw0fikiVdzFpHQA0q1_2mn2KsSg'
@@ -41,7 +42,8 @@ const routes: Routes = [
     NgbModule.forRoot(),
     HttpModule,
     googleMapKey,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    Ng2ScrollableModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
