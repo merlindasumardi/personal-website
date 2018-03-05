@@ -31,6 +31,7 @@
     "font": "0.0.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "ng2-bootstrap": "^1.6.3",
     "ng2-scrollable": "^0.8.0",
     "ng2-smooth-scroll": "^1.0.1",
     "ng2-utils": "^0.6.1",

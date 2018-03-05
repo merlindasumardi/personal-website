@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { Http, Response } from '@angular/http';
@@ -9,7 +10,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  private apiUrl = 'http://localhost:3000/skill';
+  private apiUrl = environment.apiUrl + '/skill';
   skill: any = {};
 
   constructor(private http: Http) {
@@ -32,7 +33,7 @@ export class SkillsComponent implements OnInit {
   }
 
   getWidth(score) {
-    //console.log(score);
+    // console.log(score);
     switch ( score ) {
       case 25 :
       return '25%';

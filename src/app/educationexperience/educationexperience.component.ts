@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -10,8 +11,8 @@ import 'rxjs/add/operator/map';
 export class EducationexperienceComponent implements OnInit {
   // title: 'app work!';
   private apiUrl= {
-    eduApi: 'http://localhost:3000/education',
-    expApi: 'http://localhost:3000/work'
+    eduApi: environment.apiUrl + '/education',
+    expApi: environment.apiUrl + '/work'
   };
   education: any = {};
   work: any = {};

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -8,7 +9,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./aboutme.component.css']
 })
 export class AboutmeComponent implements OnInit {
-  private apiUrl = 'http://localhost:3000/aboutme';
+  private apiUrl = environment.apiUrl + '/aboutme';
   aboutMe: any = {};
 
   constructor(private http: Http) {
