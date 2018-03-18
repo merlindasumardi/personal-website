@@ -1,4 +1,4 @@
-<ng-container *ngFor="let about of aboutMe.abouts">
+<div class="container" *ngFor="let about of aboutMe.abouts">
 <div class="row" id="aboutme">
   <div class="col col-md-3"><img class="mypicture" src="../../assets/IMG_4250.JPG" alt=""></div>
   <div class="col col-md-9 myinfo">
@@ -11,8 +11,8 @@
     <li><span>BirthPlace/Date</span>: {{about.birthPlace}}, {{about.birthDate | date}}</li>
     <li><span>Phone</span>: {{about.phone}}</li>
     <li><span>Email</span>: {{about.email}}</li>
-      <li><span>Website</span>: {{about.website}}</li>
-      <li><span>Address</span>: Jalan Raya Pesanggrahan no.88, Kembangan, Jakarta Barat, Indonesia</li>
+      <li class="text-wrap"><span>Website</span>: {{about.website}}</li>
+      <li class="text-wrap"><span>Address</span>: Jalan Raya Pesanggrahan no.88, Kembangan, Jakarta Barat, Indonesia</li>
       <li>
         <div style="text-align:center">
             <a href="../../assets/Merlinda Sumardi CV.pdf" class="button-cv">See My CV</a>
@@ -22,4 +22,4 @@
 
   </div>
 </div>
-</ng-container>
+</div>

@@ -5,6 +5,7 @@ header.masthead {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background-attachment: fixed;
 }
 
 header.masthead>.overlay {
@@ -48,7 +49,20 @@ header.masthead>.overlay {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-
+.model-3d-0 a:hover {
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+.model-3d-0 a:hover .back {
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  -o-backface-visibility: visible;
+  backface-visibility: visible;
+}
 input[type="submit"], input[type="reset"], a {
   -webkit-transition: 0.5s ease-in;
   -moz-transition: 0.5s ease-in;
@@ -59,6 +73,7 @@ input[type="submit"], input[type="reset"], a {
 
 a.facebook .front {
   background: #3b5998;
+  transition: all 1s;
 }
 
 .model-3d-0 .front, .model-3d-0 .back {
@@ -112,9 +127,16 @@ a.twitter .front {
   background: #00acee;
 }
 a.instagram .front {
-  background: #f77737;
+  background: #DD2A7B;
 }
 a.linkedin .front {
   background: #194886;
+}
+
+.nameText{
+  color: white;
+}
+.titleText{
+  color: red;
 }
 

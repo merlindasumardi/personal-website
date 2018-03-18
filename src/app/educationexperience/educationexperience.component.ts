@@ -15,7 +15,7 @@ export class EducationexperienceComponent implements OnInit {
     expApi: environment.apiUrl + '/work'
   };
   education: any = {};
-  work: any = {};
+  works: any = {};
 
   constructor(private http: Http) {
     console.log('Hello fellow user');
@@ -40,12 +40,13 @@ export class EducationexperienceComponent implements OnInit {
 
   getEduWork() {
     const edu = this.getData().tempEdu.subscribe(data => {
-      this.education = {edus: data};
+      this.education = data;
       console.log(this.education);
     });
     const work = this.getData().tempExp.subscribe(data => {
       console.log(data);
-      this.work = {works: data};
+      this.works = data;
+      console.log(this.works);
     });
   }
 

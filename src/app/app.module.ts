@@ -10,7 +10,6 @@ import { SkillsComponent } from './skills/skills.component';
 import { EducationexperienceComponent } from './educationexperience/educationexperience.component';
 import { BannerComponent } from './banner/banner.component';
 import { ContactComponent } from './contact/contact.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
 import { SmoothScrollToDirective, SmoothScrollDirective } from 'ng2-smooth-scroll';
 import { Ng2ScrollableModule } from 'ng2-scrollable';
@@ -21,7 +20,6 @@ const googleMapKey = AgmCoreModule.forRoot({
 
 const routes: Routes = [
   {path: '', component: AppComponent}
-  //{path: 'aboutme', component: AboutmeComponent}
 ];
 
 @NgModule({
@@ -39,7 +37,6 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
     HttpModule,
     googleMapKey,
     RouterModule.forRoot(routes),

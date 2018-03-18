@@ -46,10 +46,20 @@ header.masthead {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background-attachment: fixed;
 }
 
 header.masthead>.overlay {
-  padding: 3em 0;
+  /* padding: 3em 0; */
   /* text-align: left; */
   background: rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+  .skill_title{
+    font-size: 2em;
+  }
+  ul,li{
+    margin-left: -10%;
+  }
 }

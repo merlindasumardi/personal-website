@@ -11,4 +11,36 @@
 
 .nav_bg{
   background-color: white;
+  border: none;
+  margin-bottom: 0px;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 920px) {
+  .logo{
+    font-size: 18px;
+  }
+  .menu{
+    font-size: 15px;
+  }
+  
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+  .logo{
+    font-size: 16px;
+  }
+  .menu{
+    font-size: 12px;
+  }
+  
+}
+@media only screen and (min-width: 481px) and (max-width: 767px){
+  .logo{
+    font-size: 18px;
+  }
+  .menu{
+    font-size: 15px;
+  }
+  
+}
+
