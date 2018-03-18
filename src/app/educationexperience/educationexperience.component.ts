@@ -40,6 +40,7 @@ export class EducationexperienceComponent implements OnInit {
 
   getEduWork() {
     const edu = this.getData().tempEdu.subscribe(data => {
+      console.log(data[0].school);  
       this.education = data;
       console.log(this.education);
     });

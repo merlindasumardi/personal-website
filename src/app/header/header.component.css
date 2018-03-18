@@ -41,6 +41,10 @@
   .menu{
     font-size: 15px;
   }
+
+  .nav-link:hover{
+    color: blue;
+  }
   
 }
 

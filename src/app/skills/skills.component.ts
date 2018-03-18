@@ -1,6 +1,5 @@
 import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
-import { AgmCoreModule } from '@agm/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -12,6 +11,10 @@ import 'rxjs/add/operator/map';
 export class SkillsComponent implements OnInit {
   private apiUrl = environment.apiUrl + '/skill';
   skill: any = {};
+  success: boolean;
+  warning: boolean;
+  info: boolean;
+  danger: boolean;
 
   constructor(private http: Http) {
     console.log('Skill Page');
@@ -28,23 +31,12 @@ export class SkillsComponent implements OnInit {
   getSkill() {
     this.getData().subscribe(data => {
       console.log(data);
-      this.skill = {skills: data};
+      this.skill = data;
     });
   }
 
   getWidth(score) {
     // console.log(score);
-    switch ( score ) {
-      case 25 :
-      return '25%';
-      case 50 :
-      return '50%';
-      case 75 :
-      return '75%';
-      case 100 :
-      return '100%' ;
-
-
-    }
+    return score + '%';
   }
 }
