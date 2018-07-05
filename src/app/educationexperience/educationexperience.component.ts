@@ -1,7 +1,7 @@
 import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
-import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'app-educationexperience',
@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class EducationexperienceComponent implements OnInit {
   // title: 'app work!';
-  private apiUrl= {
+  private apiUrl = {
     eduApi: environment.apiUrl + '/education',
     expApi: environment.apiUrl + '/work'
   };
@@ -28,10 +28,8 @@ export class EducationexperienceComponent implements OnInit {
 
   getData() {
     console.log(this.apiUrl.eduApi);
-    const tempEdu = this.http.get(this.apiUrl.eduApi)
-      .map((res: Response) => res.json());
-    const tempExp = this.http.get(this.apiUrl.expApi)
-      .map((res: Response) => res.json());
+    const tempEdu = this.http.get(this.apiUrl.eduApi);
+    const tempExp = this.http.get(this.apiUrl.expApi);
     return {
     tempEdu,
     tempExp
@@ -40,7 +38,7 @@ export class EducationexperienceComponent implements OnInit {
 
   getEduWork() {
     const edu = this.getData().tempEdu.subscribe(data => {
-      console.log(data[0].school);  
+      console.log(data[0].school);
       this.education = data;
       console.log(this.education);
     });

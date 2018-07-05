@@ -1,21 +1,17 @@
-<div class="container" *ngFor="let about of aboutMe.abouts">
+<div class="container" >
 <div class="row" id="aboutme">
-  <div class="col col-md-3"><img class="mypicture" src="../../assets/IMG_4250.JPG" alt=""></div>
   <div class="col col-md-9 myinfo">
-    <h3 class="info_head">{{about.title}}
-    <span>{{about.subtitle}}</span>
+    <h3 class="info_head">{{aboutMe.title}}
+    <span>{{aboutMe.subtitle}}</span>
     </h3>
-    <p class="text-center">{{about.bio}}</p>
+    <p class="text-center">{{aboutMe.bio}}</p>
     <ul>
-    <li><span>Name</span>: {{about.fullname}}</li>
-    <li><span>BirthPlace/Date</span>: {{about.birthPlace}}, {{about.birthDate | date}}</li>
-    <li><span>Phone</span>: {{about.phone}}</li>
-    <li><span>Email</span>: {{about.email}}</li>
-      <li class="text-wrap"><span>Website</span>: {{about.website}}</li>
-      <li class="text-wrap"><span>Address</span>: Jalan Raya Pesanggrahan no.88, Kembangan, Jakarta Barat, Indonesia</li>
+    <li><span>Phone</span>: {{aboutMe.phone}}</li>
+    <li><span>Email</span>: {{aboutMe.email}}</li>
+      <li class="text-wrap"><span>Website</span>: {{aboutMe.website}}</li>
       <li>
         <div style="text-align:center">
-            <a href="../../assets/Merlinda Sumardi CV.pdf" class="button-cv">See My CV</a>
+            <a href="{{aboutMe.cv}}" class="button-cv">See My CV</a>
         </div>
       </li>
     </ul>

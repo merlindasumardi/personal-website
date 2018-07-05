@@ -1,0 +1,37 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="aboutMeForm" class="box">
+    <div class="form-group">
+      <label for="">Bio</label>
+      <textarea formControlName="bio" id="" cols="30" rows="10" class="form-control"></textarea>
+      <span *ngIf="aboutMeForm.get('bio').errors">Bio cannot be empty</span>
+    </div>
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" formControlName="name" id="" class="form-control">
+      <span *ngIf="aboutMeForm.get('name').errors">Name cannot be empty</span>
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="tel" formControlName="phone" id="" class="form-control">
+      <span *ngIf="!aboutMeForm.get('phone').valid && aboutMeForm.get('phone').errors.required">Title cannot be empty</span>
+      <span *ngIf="!aboutMeForm.get('phone').valid && aboutMeForm.controls.phone.hasError('minlength')">Phone must more than 10 characters</span>
+      <span *ngIf="!aboutMeForm.get('phone').valid && aboutMeForm.controls.phone.hasError('maxlength')">Phone must less than 13 characters</span>
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" formControlName="email" id="" class="form-control">
+      <span *ngIf="!aboutMeForm.get('email').valid && aboutMeForm.get('email').errors.required">Email cannot be empty</span>
+      <span *ngIf="!aboutMeForm.get('email').valid && aboutMeForm.get('email').errors.email">Email must be in email format</span>
+    </div>
+    <div class="form-group">
+      <label for="">Website</label>
+      <input type="text" formControlName="website" id="" class="form-control">
+      <span *ngIf="!aboutMeForm.get('website').valid && aboutMeForm.get('website').errors.required">Email cannot be empty</span>
+    </div>
+    <div class="form-group">
+        <input type="file" (change)="upload($event)" formContolName="cv" class="form-control">
+        <div>{{ uploadPercent | async }}</div>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!aboutMeForm.valid">Submit</button>
+    </div>
+</form>

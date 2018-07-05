@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <nav id="sidebar" [ngClass]="{active: isCollapse}">
+    <div class="sidebar-header">
+      <h3>Merlinda Sumardi</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+      <li [routerLinkActive]="'active'">
+        <a [routerLink]="['/admin', 'banner']">home</a>
+      </li>
+      <li [routerLinkActive]="'active'"><a [routerLink]="['/admin', 'aboutMe']">About</a></li>
+      <li>
+        <a href="#homeSubMenu" data-toggle="collapse" aria-expanded="false">Education & Experience</a>
+        <ul id="homeSubMenu" class="collapse list-unstyled">
+          <li [routerLinkActive]="'active'"><a [routerLink]="['/admin', 'edu']">Education</a></li>
+          <li [routerLinkActive]="'active'"><a [routerLink]="['/admin', 'exp']">Experience</a></li>
+          <li [routerLinkActive]="'active'"><a [routerLink]="['/admin', 'awards']">Awards</a></li>
+        </ul>
+      </li>
+      <li [routerLinkActive]="'active'"><a [routerLink]="['/admin', 'skill']">Skill</a></li>
+      <li [routerLinkActive]="'active'"><a [routerLink]="['/admin', 'portofolio']">Portofolio</a></li>
+    </ul>
+  </nav>
+
+  <div id="content">
+      <div class="row">
+        <div class="col-md-1">
+            <button type="button" id="sidebarCollapse" class="navbar-btn" (click)="onNavCollapse()" [ngClass]="{active: isCollapse}">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+        </div>
+        <div class="col-md-11">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+              </ol>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 form"> 
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      
+  </div>
+</div>
+

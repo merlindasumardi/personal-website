@@ -1,7 +1,8 @@
+import { AppServiceService } from './../app-service.service';
 import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
-import {Http, Response} from '@angular/http';
-import 'rxjs/add/operator/map';
+import { Response, Http } from '@angular/http';
+
 
 @Component({
   selector: 'app-aboutme',
@@ -12,25 +13,18 @@ export class AboutmeComponent implements OnInit {
   private apiUrl = environment.apiUrl + '/aboutme';
   aboutMe: any = {};
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private appService: AppServiceService) {
     console.log('about me');
-    this.getData();
-    this.getAboutMe();
-  }
-
-  getData() {
-    return this.http.get(this.apiUrl)
-      .map((res: Response) => res.json());
-  }
-
-  getAboutMe() {
-    this.getData().subscribe(data => {
-      console.log(data);
-      this.aboutMe = {abouts: data};
-    });
   }
 
   ngOnInit() {
+    this.appService.getAboutMe().subscribe(data => {
+      this.aboutMe = data.json();
+      console.log(this.aboutMe);
+    },
+    error => {
+    console.log(error);
+    });
   }
 
 }

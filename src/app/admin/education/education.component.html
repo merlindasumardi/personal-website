@@ -1,0 +1,69 @@
+<div>
+  <button (click)="addEdu()"> add</button>
+</div>
+<table>
+  <tr>
+    <th>No</th>
+    <th>Title</th>
+    <th>School</th>
+    <th>Year in</th>
+    <th>Year Out</th>
+    <th>GPA</th>
+    <th>Description</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let eduData of educations">
+    <td>{{educations.indexOf(eduData) + 1}}</td>
+    <td>{{eduData.title}}</td>
+    <td>{{eduData.school}}</td>
+    <td>{{eduData.yearin}}</td>
+    <td>{{eduData.yearout}}</td>
+    <td>{{eduData.gpa}}</td>
+    <td>{{eduData.description}}</td>
+    <td>
+      <a (click)= 'chooseEdu(eduData)'>edit</a> |
+      <a (click)='removeEdu(eduData.key)'>remove</a>
+    </td>
+  </tr>
+</table>
+
+<div >
+  <h4 *ngIf="isAdd == true">Add Education</h4>
+  <h4 *ngIf="isEdit == true">Edit Education</h4>
+  <form [formGroup]="eduForm" *ngIf="isAdd == true || isEdit == true">
+    <input type="hidden" formControlName="key" class="form-control">
+    <div class="form-group">
+      <label for="">Title</label>
+      <input type="text" formControlName="title" class="form-control" >
+      <span *ngIf="eduForm.get('title').errors">Title cannot be empty</span>
+    </div>
+    <div class="form-group">
+        <label for="">School</label>
+        <input type="text" formControlName="school" class="form-control" >
+        <span *ngIf="eduForm.get('school').errors">School cannot be empty</span>
+    </div>
+    <div class="form-group">
+        <label for="">Year In</label>
+        <input type="number" formControlName="yearin" class="form-control" >
+        <span *ngIf="eduForm.get('yearin').errors">Year In cannot be empty</span>
+    </div>
+    <div class="form-group">
+        <label for="">Year Out</label>
+        <input type="number" formControlName="yearout" class="form-control" >
+        <span *ngIf="eduForm.get('yearout').errors">Year Out cannot be empty</span>
+    </div>
+    <div class="form-group">
+        <label for="">GPA</label>
+        <input type="number" formControlName="gpa" class="form-control" >
+        <span *ngIf="eduForm.get('gpa').errors">GPA cannot be empty</span>
+    </div>
+    <div class="form-group">
+        <label for="">Description</label>
+        <textarea id="" cols="30" rows="10" formControlName="description" class="form-control"></textarea>
+    </div>
+    <div>
+      <button *ngIf="isAdd == true" type="submit" [disabled]="!eduForm.valid" (click)="submitEdu()">Submit</button>
+      <button *ngIf="isEdit == true" type="submit" [disabled]="!eduForm.valid" (click)="editEdu()">Edit</button>
+    </div>
+  </form>
+</div>

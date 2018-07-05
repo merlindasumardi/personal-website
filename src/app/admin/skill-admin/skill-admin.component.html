@@ -1,0 +1,66 @@
+<div>
+  <button (click)="addSkill()"> add</button>
+</div>
+<table>
+  <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Score</th>
+    <th>Image</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let skillData of skills">
+    <td>{{skills.indexOf(skillData) + 1}}</td>
+    <td>{{skillData.skillName}}</td>
+    <td>{{skillData.skillCategory}}</td>
+    <td>{{skillData.skillScore}}</td>
+    <td>{{skillData.skillImage}}</td>
+    <td>
+      <a (click)= 'chooseSkill(skillData)'>edit</a> |
+      <a (click)='removeSkill(skillData.key)'>remove</a>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <h4 *ngIf="isAdd == true">Add Skill</h4>
+  <h4 *ngIf="isEdit == true">Edit Skill</h4>
+<form [formGroup]="skillForm" class="box" *ngIf="isAdd == true || isEdit == true">
+    <input  *ngIf="isEdit == true" type="hidden" formControlName="key"  class="form-control">
+  <div class="form-group">
+    <label for="">Skill Name</label>
+    <input type="text" formControlName="skillName"  class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Skill Type</label>
+    <div>
+      <label  class="radio" *ngFor="let type of skillType" class="selection">
+        <input type="radio" formControlName="skillCategory" [value]="type" class="form-control">{{type}}
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Skill Capability</label>
+    <div>
+        <label  class="radio" *ngFor="let value of skillValue" class="selection">
+            <input type="radio" formControlName="skillScore"  [value]="value" class="form-control">{{value}}
+          </label>
+    </div>
+    
+  </div>
+  <div class="form-group">
+    <input type="file" formControlName="skillImage" (change)="upload($event)" class="form-control">
+  </div>
+  <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) + '%'" [attr.aria-valuenow]="(uploadPercent | async)" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <img src="{{downloadURL | async}}" alt="" class="image-preview">
+  <div *ngIf="isAdd == true">
+    <button type="submit" [disabled] = "!skillForm.valid" (click)="submitForm()">submit</button>
+  </div>
+  <div *ngIf="isEdit == true">
+    <button type="submit" [disabled] = "!skillForm.valid" (click)="editSkill()">submit</button>
+  </div>
+</form>
+</div>

@@ -1,0 +1,71 @@
+<div>
+    <button (click)="addExp()"> add</button>
+  </div>
+  <table>
+    <tr>
+      <th>No</th>
+      <th>Project Name</th>
+      <th>Github Link</th>
+      <th>Year</th>
+      <th>Language</th>
+      <th>Description</th>
+      <th>Image 1</th>
+      <th>image 2</th>
+      <th>Image 3</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let projectData of portofolio">
+      <td>{{portofolio.indexOf(projectData) + 1}}</td>
+      <td>{{projectData.projectName}}</td>
+      <td>{{projectData.github}}</td>
+      <td>{{projectData.year}}</td>
+      <td>{{projectData.language}}</td>
+      <td>{{projectData.description}}</td>
+      <td>{{projectData.image1}}</td>
+      <td>{{projectData.image2}}</td>
+      <td>{{projectData.image3}}</td>
+      <td>
+        <a (click)= 'chooseExp(projectData)'>edit</a> |
+        <a (click)='removeExp(projectData.key)'>remove</a>
+      </td>
+    </tr>
+  </table>
+  
+  <div >
+    <h4 *ngIf="isAdd == true">Add Portofolio</h4>
+    <h4 *ngIf="isEdit == true">Edit Portofolio</h4>
+    <form [formGroup]="portoForm" *ngIf="isAdd == true || isEdit == true">
+      <input *ngIf="isEdit == true" type="hidden" formControlName="key" class="form-control">
+      <div class="form-group">
+        <label for="">Project Name</label>
+        <input type="text" formControlName="projectName" class="form-control">
+        <span *ngIf="portoForm.get('projectName').errors">Project Name cannot be empty</span>
+      </div>
+      <div class="form-group">
+          <label for="">github</label>
+          <input type="text" formControlName="github" class="form-control" >
+      </div>
+      <div class="form-group">
+          <label for="">Year</label>
+          <input type="number" formControlName="year" class="form-control" >
+          <span *ngIf="portoForm.get('year').errors">Year cannot be empty</span>
+      </div>
+      <div class="form-group">
+          <label for="">Language</label>
+          <input type="text" formControlName="language" class="form-control" >
+          <span *ngIf="portoForm.get('language').errors">Language cannot be empty</span>
+      </div>
+      <div class="form-group">
+          <label for="">Description</label>
+          <textarea id="" cols="30" rows="10" formControlName="description" class="form-control"></textarea>
+      </div>
+      <div *ngIf="isAdd == true">
+        <button  type="submit" [disabled]="!portoForm.valid" (click)="submitPorto()">Submit</button>
+      </div>
+      <div  *ngIf="isEdit == true">
+        <button type="submit" [disabled]="!portoForm.valid" (click)="editPorto()">Edit</button>
+      </div>
+    </form>
+  </div>
+  
+

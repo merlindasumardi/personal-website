@@ -1,7 +1,10 @@
+import { Observable } from 'rxjs';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AppServiceService } from './../app-service.service';
 import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'app-skills',
@@ -10,33 +13,20 @@ import 'rxjs/add/operator/map';
 })
 export class SkillsComponent implements OnInit {
   private apiUrl = environment.apiUrl + '/skill';
-  skill: any = {};
+  skill: Observable<any[]>;
   success: boolean;
   warning: boolean;
   info: boolean;
   danger: boolean;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private appService: AppServiceService, private af: AngularFireDatabase) {
     console.log('Skill Page');
-    this.getData();
-    this.getSkill();
   }
 
   ngOnInit() {
-  }
-  getData() {
-    return this.http.get(this.apiUrl)
-      .map((res: Response) => res.json());
-  }
-  getSkill() {
-    this.getData().subscribe(data => {
-      console.log(data);
-      this.skill = data;
+    this.skill = this.af.list('skill').valueChanges();
+    this.skill.subscribe(data => {
+    console.log(data);
     });
-  }
-
-  getWidth(score) {
-    // console.log(score);
-    return score + '%';
   }
 }

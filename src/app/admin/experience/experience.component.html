@@ -1,0 +1,65 @@
+<div>
+    <button (click)="addExp()"> add</button>
+  </div>
+  <table>
+    <tr>
+      <th>No</th>
+      <th>Company Name</th>
+      <th>Position</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let expData of experience">
+      <td>{{experience.indexOf(expData) + 1}}</td>
+      <td>{{expData.companyName}}</td>
+      <td>{{expData.position}}</td>
+      <td>{{expData.startDate}}</td>
+      <td>{{expData.endDate}}</td>
+      <td>{{expData.description}}</td>
+      <td>
+        <a (click)= 'chooseExp(expData)'>edit</a> |
+        <a (click)='removeExp(expData.key)'>remove</a>
+      </td>
+    </tr>
+  </table>
+  
+  <div >
+    <h4 *ngIf="isAdd == true">Add Experience</h4>
+    <h4 *ngIf="isEdit == true">Edit Experience</h4>
+    <form [formGroup]="expForm" *ngIf="isAdd == true || isEdit == true">
+      <input *ngIf="isEdit == true" type="hidden" formControlName="key" class="form-control">
+      <div class="form-group">
+        <label for="">Company Name</label>
+        <input type="text" formControlName="companyName" class="form-control">
+        <span *ngIf="expForm.get('companyName').errors">Company Name cannot be empty</span>
+      </div>
+      <div class="form-group">
+          <label for="">Position</label>
+          <input type="text" formControlName="position" class="form-control" >
+          <span *ngIf="expForm.get('position').errors">Position cannot be empty</span>
+      </div>
+      <div class="form-group">
+          <label for="">Start Date</label>
+          <input type="date" formControlName="startDate" class="form-control" >
+          <span *ngIf="expForm.get('startDate').errors">Start Date cannot be empty</span>
+      </div>
+      <div class="form-group">
+          <label for="">End Date</label>
+          <input type="text" formControlName="endDate" class="form-control" >
+          <span *ngIf="expForm.get('endDate').errors">End Date cannot be empty</span>
+      </div>
+      <div class="form-group">
+          <label for="">Description</label>
+          <textarea id="" cols="30" rows="10" formControlName="description" class="form-control"></textarea>
+      </div>
+      <div *ngIf="isAdd == true">
+        <button  type="submit" [disabled]="!expForm.valid" (click)="submitExp()">Submit</button>
+      </div>
+      <div  *ngIf="isEdit == true">
+        <button type="submit" [disabled]="!expForm.valid" (click)="editExp()">Edit</button>
+      </div>
+    </form>
+  </div>
+  
