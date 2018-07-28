@@ -1,5 +1,5 @@
 <div>
-    <button (click)="addExp()"> add</button>
+    <button (click)="addPorto()"> add</button>
   </div>
   <table>
     <tr>
@@ -25,8 +25,8 @@
       <td>{{projectData.image2}}</td>
       <td>{{projectData.image3}}</td>
       <td>
-        <a (click)= 'chooseExp(projectData)'>edit</a> |
-        <a (click)='removeExp(projectData.key)'>remove</a>
+        <a (click)= 'choosePorto(projectData)'>edit</a> |
+        <a (click)='removePorto(projectData.key)'>remove</a>
       </td>
     </tr>
   </table>
@@ -59,6 +59,27 @@
           <label for="">Description</label>
           <textarea id="" cols="30" rows="10" formControlName="description" class="form-control"></textarea>
       </div>
+      <div class="form-group">
+        <input type="file" formControlName="image1" (change)="upload($event, 'image1')" class="form-control">
+      </div>
+      <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent1 | async) + '%'" [attr.aria-valuenow]="(uploadPercent | async)" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <img src="{{imageURL1 | async}}" alt="" class="image-preview">
+      <div class="form-group">
+        <input type="file" formControlName="image2" (change)="upload($event, 'image2')" class="form-control">
+      </div>
+      <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent2 | async) + '%'" [attr.aria-valuenow]="(uploadPercent | async)" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <img src="{{imageURL2 | async}}" alt="" class="image-preview">
+      <div class="form-group">
+        <input type="file" formControlName="image3" (change)="upload($event, 'image3')" class="form-control">
+      </div>
+      <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent3 | async) + '%'" [attr.aria-valuenow]="(uploadPercent | async)" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <img src="{{imageURL3 | async}}" alt="" class="image-preview">
       <div *ngIf="isAdd == true">
         <button  type="submit" [disabled]="!portoForm.valid" (click)="submitPorto()">Submit</button>
       </div>

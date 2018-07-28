@@ -1,6 +1,7 @@
 import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 @Component({
@@ -9,44 +10,13 @@ import {Http, Response} from '@angular/http';
   styleUrls: ['./educationexperience.component.css']
 })
 export class EducationexperienceComponent implements OnInit {
-  // title: 'app work!';
-  private apiUrl = {
-    eduApi: environment.apiUrl + '/education',
-    expApi: environment.apiUrl + '/work'
-  };
   education: any = {};
-  works: any = {};
 
-  constructor(private http: Http) {
-    console.log('Hello fellow user');
-    this.getData();
-    this.getEduWork();
+  constructor(private http: Http, private af: AngularFireDatabase) {
   }
 
   ngOnInit() {
-  }
-
-  getData() {
-    console.log(this.apiUrl.eduApi);
-    const tempEdu = this.http.get(this.apiUrl.eduApi);
-    const tempExp = this.http.get(this.apiUrl.expApi);
-    return {
-    tempEdu,
-    tempExp
-    };
-  }
-
-  getEduWork() {
-    const edu = this.getData().tempEdu.subscribe(data => {
-      console.log(data[0].school);
-      this.education = data;
-      console.log(this.education);
-    });
-    const work = this.getData().tempExp.subscribe(data => {
-      console.log(data);
-      this.works = data;
-      console.log(this.works);
-    });
+    this.education = this.af.list('education').valueChanges();
   }
 
 }

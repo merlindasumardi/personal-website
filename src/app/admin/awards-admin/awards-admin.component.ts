@@ -6,17 +6,18 @@ import { AppServiceService } from '../../app-service.service';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-awards',
-  templateUrl: './awards.component.html',
-  styleUrls: ['./awards.component.css']
+  selector: 'app-awards-admin',
+  templateUrl: './awards-admin.component.html',
+  styleUrls: ['./awards-admin.component.css']
 })
-export class AwardsComponent implements OnInit {
+export class AwardsAdminComponent implements OnInit {
   award: AngularFireList<any>;
   awardForm: FormGroup;
   isAdd = false;
   isEdit = false;
   awards: any[];
   awardData: Observable<any[]>;
+
   constructor(private db: AngularFireDatabase, private appService: AppServiceService, public formBuilder: FormBuilder) { }
 
   ngOnInit() {

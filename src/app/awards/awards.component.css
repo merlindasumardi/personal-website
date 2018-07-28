@@ -1,0 +1,27 @@
+.award{
+  padding: 2em;
+}
+
+h3{
+  padding: 20px;
+  font-size: 2.0em !important;
+  text-decoration: underline;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.award-year{
+  font-size: 18px;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.award-title{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.award-description{
+  font-size: 12px;
+}

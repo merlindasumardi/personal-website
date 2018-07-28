@@ -17,11 +17,11 @@
 
 .info_head {
   text-align: center;
-  color: #303030;
-  margin: 0 0 1em;
-  font-size: 2.5em;
+  color: #0086fe;
+  font-size: 2.0em;
   letter-spacing: 2px;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 h2, h3, h4, h5, h6 {
@@ -105,6 +105,15 @@ ul {
     margin-top: 60px;
     margin-bottom: 20px;
   }
+
+  .info_head{
+    font-size: 25px;
+  }
+
+  .myinfo{
+    padding: 
+  }
+
   .myinfo p{
     font-size: 14px;
   }
@@ -185,6 +194,11 @@ ul {
     margin-top: 45px;
     margin-bottom: 15px;
   }
+
+  .myinfo{
+    padding: 1.3em;
+  }
+
   .myinfo p{
     font-size: 12px;
   }

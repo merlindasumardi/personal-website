@@ -1,0 +1,50 @@
+<div class="work row">
+  <div class="col-md-3">
+      <h3 class="text-center work_title">Experiences</h3>
+  </div>
+  <div class="col-md-9">
+    <!--Timeline start-->
+    <ng-container *ngFor="let work of works | async; let i = index">
+        <!-- cd-timeline-block -->
+        <div class="timeline">
+           <div class="timelineWrap left" *ngIf="i % 2 == 0">
+             <div class="content">
+               <h2>{{work.companyName}}</h2>
+               <div >
+                   <span class="work-position">
+                     <i class="fa fa-certificate" aria-hidden="true"></i>
+                     {{work.position}}
+                   </span>
+                     <span class="work-position" *ngIf="i != 0">
+                     <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                     {{work.startDate | date}} - {{work.endDate | date}}
+                   </span>
+                   <span class="work-position" *ngIf="i == 0">
+                     <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                     {{work.startDate | date}} - {{work.endDate}}
+                   </span>
+                   </div>
+               <p>{{work.description}}</p>
+             </div>
+           </div>
+           <div class="timelineWrap right" *ngIf="i % 2 == 1">
+               <div class="content">
+                   <h2>{{work.companyName}}</h2>
+                   <div >
+                       <span class="work-position">
+                         <i class="fa fa-certificate" aria-hidden="true"></i>
+                         {{work.position}}
+                       </span>
+                         <span class="work-position">
+                         <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                         {{work.startDate | date}} - {{work.endDate | date}}
+                       </span>
+                       </div>
+                   <p>{{work.description}}</p>
+                 </div>
+           </div>
+         </div>
+       </ng-container>
+  </div>
+
+  </div>

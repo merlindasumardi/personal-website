@@ -1,75 +1,22 @@
-<div id="eduwork" class="edu-work">
-  <h3 class="text-center">Education & Work Experiences</h3>
-  <h4 class="text-center">Education</h4>
-  <ng-container *ngFor="let edu of education">
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
-          <h4 class="panel-title">
-            <a class="edu" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <span class="edu-date">{{edu.yearIn}}-{{edu.yearOut}}</span>
-              {{edu.title}} {{edu.school}}
-            <i class="float-right fa fa-angle-down edu"></i>
-            </a>
-          </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-              <p>
-                  <i class="fa fa-star"></i>
-                  {{edu.description}}
-                </p>
-                <p><i class="fa fa-star"></i>
-                  GPA: {{edu.gpa}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </ng-container>
-
-  <div>
-    <h4 class="text-center">Work Experiences</h4>
-
-    <!--Timeline start-->
-      <ng-container *ngFor="let work of works">
-       <!-- cd-timeline-block -->
-       <div class="timeline">
-          <div class="timelineWrap left" *ngIf="works.indexOf(work) % 2 == 0">
-            <div class="content">
-              <h2>{{work.companyName}}</h2>
-              <div >
-                  <span class="work-position">
-                    <i class="fa fa-certificate" aria-hidden="true"></i>
-                    {{work.position}}
-                  </span>
-                    <span class="work-position">
-                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                    {{work.startDate | date}} - {{work.endDate | date}}
-                  </span>
-                  </div>
-              <p>{{work.description}}</p>
-            </div>
-          </div>
-          <div class="timelineWrap right" *ngIf="works.indexOf(work) % 2 == 1">
-              <div class="content">
-                  <h2>{{work.companyName}}</h2>
-                  <div >
-                      <span class="work-position">
-                        <i class="fa fa-certificate" aria-hidden="true"></i>
-                        {{work.position}}
-                      </span>
-                        <span class="work-position">
-                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                        {{work.startDate | date}} - {{work.endDate | date}}
-                      </span>
-                      </div>
-                  <p>{{work.description}}</p>
-                </div>
-          </div>
+<header class="masthead">
+<div id="eduwork" class="edu-work row">
+  <div class="col-md-3"><h3 class="text-center">Education</h3></div>
+  <div class="col-md-9">
+      <ng-container *ngFor="let edu of education | async" >
+        <div class="edu-box">
+            <div>
+                <label class="edu-title">{{edu.yearin}} - {{edu.yearout}} {{edu.title}} ({{edu.school}})</label>
+              </div>
+              <div class="edu-desc">
+                <p *ngIf="edu.gpa">GPA: {{edu.gpa}}</p>
+                <p *ngIf="edu.description">{{edu.description}}</p>
+              </div>
         </div>
       </ng-container>
-
   </div>
+
+
 </div>
+</header>
 
 

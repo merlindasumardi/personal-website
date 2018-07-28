@@ -1,0 +1,35 @@
+<div class="award row">
+  <div class="col-md-3">
+    <h3 class="text-center">Awards</h3>
+  </div>
+  <div class="col-md-9">
+    <label class="award-year">2017</label>
+    <ng-container *ngFor="let award of awards | async">
+      <div *ngIf="award.year == 2017">
+        <label class="award-title">{{award.title}}</label>
+          <p class="award-description" >{{award.description}}</p>
+      </div>
+    </ng-container>
+    <label class="award-year">2016</label>
+    <ng-container *ngFor="let award of awards | async">
+      <div *ngIf="award.year == 2016">
+        <label class="award-title">{{award.title}}</label>
+          <p  class="award-description">{{award.description}}</p>
+      </div>
+    </ng-container>
+    <label class="award-year">2015</label>
+    <ng-container *ngFor="let award of awards | async">
+      <div *ngIf="award.year == 2015">
+        <label class="award-title">{{award.title}}</label>
+          <p  class="award-description">{{award.description}}</p>
+      </div>
+    </ng-container>
+    <label class="award-year">2014</label>
+    <ng-container *ngFor="let award of awards | async">
+      <div *ngIf="award.year == 2014">
+        <label class="award-title">{{award.title}}</label>
+          <p class="award-description" >{{award.description}}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

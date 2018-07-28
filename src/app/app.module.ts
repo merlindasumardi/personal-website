@@ -23,8 +23,12 @@ import { AboutmeAdminComponent } from './admin/aboutme-admin/aboutme-admin.compo
 import { SkillAdminComponent } from './admin/skill-admin/skill-admin.component';
 import { EducationComponent } from './admin/education/education.component';
 import { ExperienceComponent } from './admin/experience/experience.component';
-import { AwardsComponent } from './admin/awards/awards.component';
+import { AwardsComponent } from './awards/awards.component';
 import { PortofolioAdminComponent } from './admin/portofolio-admin/portofolio-admin.component';
+import { BlogAdminComponent } from './admin/blog-admin/blog-admin.component';
+import { WorkComponent } from './work/work.component';
+import { PortofolioComponent } from './portofolio/portofolio.component';
+import { AwardsAdminComponent } from './admin/awards-admin/awards-admin.component';
 
 const googleMapKey = AgmCoreModule.forRoot({
   apiKey: 'AIzaSyD9KRgBgw0fikiVdzFpHQA0q1_2mn2KsSg'
@@ -37,7 +41,7 @@ const routes: Routes = [
     {path: 'skill', component: SkillAdminComponent},
     {path: 'edu', component: EducationComponent},
     {path: 'exp', component: ExperienceComponent},
-    {path: 'awards', component: AwardsComponent},
+    {path: 'awards', component: AwardsAdminComponent},
     {path: 'portofolio', component: PortofolioAdminComponent}
 
   ]}
@@ -61,6 +65,10 @@ const routes: Routes = [
     ExperienceComponent,
     AwardsComponent,
     PortofolioAdminComponent,
+    BlogAdminComponent,
+    WorkComponent,
+    PortofolioComponent,
+    AwardsAdminComponent,
   ],
   imports: [
     BrowserModule,
