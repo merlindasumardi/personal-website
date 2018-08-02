@@ -103,6 +103,7 @@ export class PortofolioAdminComponent implements OnInit {
     console.log(this.portoForm.value);
   }
   submitPorto() {
+    this.portoForm.value.language = this.portoForm.value.language.split(",");
     this.appService.addPortofolio(this.portoForm.value).subscribe((response) => {
       console.log(response);
     }, (error) => {

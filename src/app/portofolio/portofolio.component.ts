@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '../../../node_modules/angularfire2/database';
 
 @Component({
   selector: 'app-portofolio',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portofolio.component.css']
 })
 export class PortofolioComponent implements OnInit {
+  portofolio: any = {};
+  languages: any = [];
 
-  constructor() { }
+  constructor(public db: AngularFireDatabase) { }
 
   ngOnInit() {
+    this.portofolio = this.db.list('portofolio').valueChanges();
+    this.portofolio.subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

@@ -16,7 +16,6 @@ header.masthead {
 header.masthead>.overlay {
   padding: 3em 0;
   /* text-align: left; */
-  background: rgba(0, 0, 0, 0.6);
 }
 
 input, textarea {
