@@ -1,6 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://merlindasumardi.herokuapp.com',
   firebase: {
     apiKey: 'AIzaSyAvwnLPaO6H1_AFsgON3fIOOy_er_m0Gcg',
     authDomain: 'merlinda-website-1507826956343.firebaseapp.com',
