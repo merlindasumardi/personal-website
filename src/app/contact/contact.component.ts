@@ -1,4 +1,3 @@
-import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
@@ -10,7 +9,6 @@ import { Http, Response } from '@angular/http';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  private apiUrl = environment.apiUrl;
   contact: any = {};
 
   constructor(private http: Http) {}

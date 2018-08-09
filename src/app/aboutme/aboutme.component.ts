@@ -1,5 +1,4 @@
 import { AppServiceService } from './../app-service.service';
-import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Response, Http } from '@angular/http';
 
@@ -10,7 +9,6 @@ import { Response, Http } from '@angular/http';
   styleUrls: ['./aboutme.component.css']
 })
 export class AboutmeComponent implements OnInit {
-  private apiUrl = environment.apiUrl + '/aboutme';
   aboutMe: any = {};
 
   constructor(private http: Http, private appService: AppServiceService) {

@@ -1,7 +1,6 @@
 import { Observable } from 'rxjs';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AppServiceService } from './../app-service.service';
-import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
@@ -12,7 +11,6 @@ import { Http, Response } from '@angular/http';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  private apiUrl = environment.apiUrl + '/skill';
   skill: Observable<any[]>;
   success: boolean;
   warning: boolean;
