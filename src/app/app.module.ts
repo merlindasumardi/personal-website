@@ -36,7 +36,7 @@ const googleMapKey = AgmCoreModule.forRoot({
 });
 
 const routes: Routes = [
-  { path: '', component: HeaderComponent },
+  { path: 'home', component: HeaderComponent },
   {path: 'admin', component: AdminComponent, children: [
     {path: 'aboutMe', component: AboutmeAdminComponent},
     {path: 'skill', component: SkillAdminComponent},
