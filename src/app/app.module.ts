@@ -29,6 +29,7 @@ import { BlogAdminComponent } from './admin/blog-admin/blog-admin.component';
 import { WorkComponent } from './work/work.component';
 import { PortofolioComponent } from './portofolio/portofolio.component';
 import { AwardsAdminComponent } from './admin/awards-admin/awards-admin.component';
+import { LoginComponent } from './login/login.component';
 
 const googleMapKey = AgmCoreModule.forRoot({
   apiKey: 'AIzaSyD9KRgBgw0fikiVdzFpHQA0q1_2mn2KsSg'
@@ -69,6 +70,7 @@ const routes: Routes = [
     WorkComponent,
     PortofolioComponent,
     AwardsAdminComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

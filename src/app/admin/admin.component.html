@@ -1,7 +1,7 @@
 <div class="wrapper">
-  <nav id="sidebar" [ngClass]="{active: isCollapse}">
+  <nav id="sidebar" [ngClass]="{active: isCollapse}" >
     <div class="sidebar-header">
-      <h3 [routerLink]="['/']">Merlinda Sumardi</h3>
+      <a class="navbar-brand" [routerLink]="['/']">Merlinda Sumardi</a>
     </div>
 
     <ul class="list-unstyled components">
@@ -22,7 +22,7 @@
     </ul>
   </nav>
 
-  <div id="content">
+  <div class="container">
       <div class="row">
         <div class="col-md-1">
             <button type="button" id="sidebarCollapse" class="navbar-btn" (click)="onNavCollapse()" [ngClass]="{active: isCollapse}">
@@ -31,13 +31,6 @@
                 <span></span>
               </button>
         </div>
-        <div class="col-md-11">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
-              </ol>
-            </div>
       </div>
       <div class="row">
         <div class="col-md-12 form"> 

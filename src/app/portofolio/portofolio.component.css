@@ -8,6 +8,12 @@ header.masthead {
   background-attachment: fixed;
 }
 
+header.masthead>.overlay {
+  /* padding: 3em 0; */
+  /* text-align: left; */
+  background: rgba(0, 0, 0, 0.6);
+}
+
 .porto{
   padding: 2em;
 }
@@ -24,6 +30,11 @@ h3{
 .porto-content{
   width: 30rem;
   margin-bottom: 20px;
+
+}
+
+img{
+  height: 250px;
 }
 
 .language-porto{

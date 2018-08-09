@@ -79,9 +79,10 @@ export class PortofolioAdminComponent implements OnInit {
         console.log(imageName);
         if (imageName === 'image1') {
           this.imageURL1 = referenceId.getDownloadURL();
-          console.log(this.imageURL1);
+          console.log('halo',this.imageURL1);
           this.imageURL1.subscribe(data => {
             console.log(data);
+            console.log(this.portoForm.value)
             this.portoForm.value.image1 = data;
           });
         } else if (imageName === 'image2') {

@@ -31,6 +31,23 @@ input, textarea {
   padding-right: 0px;
 }
 
+h3{
+  padding: 20px;
+  font-size: 2.0em !important;
+  text-decoration: underline;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2473a0;
+}
+
+.quote{
+  color: #838a94;
+}
+
+.contact-item{
+  color: #3295be;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px){
   h2{
     font-size: 2em;
