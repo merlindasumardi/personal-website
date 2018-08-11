@@ -50,6 +50,7 @@ downloadURL: Observable<string>;
      .subscribe();
     this.downloadURL = referenceId.getDownloadURL();
     this.downloadURL.subscribe(data => {
+      console.log(data);
       this.aboutMeForm.value.cv = data;
     });
   }
@@ -80,7 +81,7 @@ downloadURL: Observable<string>;
       'phone': this.aboutMeForm.value.phone,
       'email': this.aboutMeForm.value.email,
       'website': this.aboutMeForm.value.website,
-      'cv': this.aboutMeForm.value.cv ? this.dbData.cv : this.aboutMeForm.value.cv
+      'cv': this.aboutMeForm.value.cv ? this.aboutMeForm.value.cv : this.dbData.cv
     });
   }
 }

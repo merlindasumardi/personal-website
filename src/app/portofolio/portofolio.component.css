@@ -54,3 +54,12 @@ img{
 .subtitle{
   font-size: 12px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+  h3{
+    font-size: 1.5em;
+  }
+  .porto-content{
+    width: 20em;
+  }
+}
