@@ -18,7 +18,6 @@ export class AuthService {
       (user) => {
         if (user) {
           this.userDetails = user;
-          console.log(this.userDetails);
         } else {
           this.userDetails = null;
         }
@@ -30,7 +29,6 @@ export class AuthService {
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
         this.userDetails = user;
-        console.log(this.userDetails);
       })
       .catch(err => console.log(err));
   }

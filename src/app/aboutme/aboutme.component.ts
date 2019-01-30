@@ -18,7 +18,6 @@ export class AboutmeComponent implements OnInit {
   ngOnInit() {
     this.appService.getAboutMe().subscribe(data => {
       this.aboutMe = data.json();
-      console.log(this.aboutMe);
     },
     error => {
     console.log(error);

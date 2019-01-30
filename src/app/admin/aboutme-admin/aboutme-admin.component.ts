@@ -37,7 +37,6 @@ downloadURL: Observable<string>;
   }
 
   upload(event) {
-    console.log(event);
     const id = 'merlindaCV';
     const referenceId = this.afStorage.ref(id);
     const task = referenceId.put(event.target.files[0]);
@@ -50,7 +49,6 @@ downloadURL: Observable<string>;
      .subscribe();
     this.downloadURL = referenceId.getDownloadURL();
     this.downloadURL.subscribe(data => {
-      console.log(data);
       this.aboutMeForm.value.cv = data;
     });
   }
@@ -58,7 +56,6 @@ downloadURL: Observable<string>;
   onGetAboutMe() {
     this.appService.getAboutMe().subscribe(data => {
      this.dbData = data.json();
-     console.log(this.dbData);
      this.aboutMeForm = new FormGroup({
       'bio': new FormControl(this.dbData.bio, Validators.required),
       'name': new FormControl(this.dbData.name, Validators.required),
@@ -74,7 +71,6 @@ downloadURL: Observable<string>;
   }
 
   onSubmit() {
-    console.log(this.aboutMeForm.value);
     this.db.object('aboutMe').set({
       'bio': this.aboutMeForm.value.bio,
       'name': this.aboutMeForm.value.name,

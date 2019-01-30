@@ -39,7 +39,6 @@ export class PortofolioAdminComponent implements OnInit {
 
     this.portoData.subscribe(data => {
       this.portofolio = data;
-      console.log(this.portofolio);
     });
   }
 
@@ -76,32 +75,25 @@ export class PortofolioAdminComponent implements OnInit {
     //get downloadURL
     task.snapshotChanges().pipe(
       finalize(() => {
-        console.log(imageName);
         if (imageName === 'image1') {
           this.imageURL1 = referenceId.getDownloadURL();
-          console.log('halo',this.imageURL1);
           this.imageURL1.subscribe(data => {
-            console.log(data);
-            console.log(this.portoForm.value)
             this.portoForm.value.image1 = data;
           });
         } else if (imageName === 'image2') {
           this.imageURL2 = referenceId.getDownloadURL();
           this.imageURL2.subscribe(data => {
-            console.log(data);
             this.portoForm.value.image2 = data;
           });
         } else if (imageName === 'image3') {
           this.imageURL3 = referenceId.getDownloadURL();
           this.imageURL3.subscribe(data => {
-            console.log(data);
             this.portoForm.value.image3 = data;
           });
         }
 
       })
     ).subscribe();
-    console.log(this.portoForm.value);
   }
   submitPorto() {
     this.portoForm.value.language = this.portoForm.value.language.split(",");
@@ -135,7 +127,6 @@ export class PortofolioAdminComponent implements OnInit {
     });
   }
   editPorto() {
-    console.log(this.portoForm.value);
     this.porto.update(this.portoForm.value.key, {
       'projectName': this.portoForm.value.projectName,
       'github': this.portoForm.value.github,

@@ -31,7 +31,6 @@ export class EducationComponent implements OnInit {
 
     this.eduData.subscribe(data => {
       this.educations = data;
-      console.log(this.educations);
     });
   }
 
@@ -71,7 +70,6 @@ export class EducationComponent implements OnInit {
 
   }
   editEdu() {
-    console.log(this.eduForm.value);
     this.edu.update(this.eduForm.value.key, {
       'title': this.eduForm.value.title,
       'school': this.eduForm.value.school,

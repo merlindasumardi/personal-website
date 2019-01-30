@@ -30,7 +30,6 @@ export class AwardsAdminComponent implements OnInit {
 
     this.awardData.subscribe(data => {
       this.awards = data;
-      console.log(this.awards);
     });
   }
 
@@ -64,7 +63,6 @@ export class AwardsAdminComponent implements OnInit {
 
   }
   editAward() {
-    console.log(this.awardForm.value);
     this.award.update(this.awardForm.value.key, {
       'title': this.awardForm.value.title,
       'description': this.awardForm.value.description,

@@ -30,7 +30,6 @@ export class ExperienceComponent implements OnInit {
 
     this.expData.subscribe(data => {
       this.experience = data;
-      console.log(this.experience);
     });
   }
 
@@ -68,7 +67,6 @@ export class ExperienceComponent implements OnInit {
 
   }
   editExp() {
-    console.log(this.expForm.value);
     this.exp.update(this.expForm.value.key, {
       'companyName': this.expForm.value.companyName,
       'position': this.expForm.value.position,

@@ -96,7 +96,6 @@ export class SkillAdminComponent implements OnInit {
   }
 
   editSkill() {
-    console.log(this.skillForm.value);
     this.skill.update(this.skillForm.value.key, {
       'skillName': this.skillForm.value.skillName,
       'skillCategory': this.skillForm.value.skillCategory,
