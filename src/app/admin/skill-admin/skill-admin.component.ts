@@ -27,7 +27,7 @@ export class SkillAdminComponent implements OnInit {
   image: any;
   constructor(private afStorage: AngularFireStorage, 
     private formBuilder: FormBuilder, 
-    private skillService: AppServiceService , 
+    private skillService: AppServiceService ,
     private db: AngularFireDatabase) { }
 
   ngOnInit() {

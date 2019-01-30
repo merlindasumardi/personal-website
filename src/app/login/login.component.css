@@ -1,0 +1,21 @@
+.login-box {
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid lightgrey;
+    box-shadow: 5px 10px 50px #888;
+    background-color: white;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+}
+
+.login-form {
+    margin: auto;
+    padding: 20px;
+}
+
+.wrapper {
+    background-color: pink;
+    height: 1500px;
+}

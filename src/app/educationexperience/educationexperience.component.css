@@ -54,4 +54,11 @@ h3,h4{
     h3{
       font-size: 1.5em
     }
+    .edu-title {
+      font-size: 14px;
+    }
+
+    .edu-box {
+      margin: auto;
+    }
   }

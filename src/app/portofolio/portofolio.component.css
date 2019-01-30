@@ -55,11 +55,38 @@ img{
   font-size: 12px;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px){
+@media only screen and (min-width: 481px) and (max-width: 800px){
   h3{
     font-size: 1.5em;
   }
+  h5 {
+    font-size: 1em;
+  }
   .porto-content{
     width: 20em;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+  h3{
+    font-size: 1em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+  .porto-content{
+    width: 15em;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  label{
+    font-size: 12px;
+  }
+
+  img {
+    height: 170px;
   }
 }

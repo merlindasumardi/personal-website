@@ -1,3 +1,5 @@
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AppServiceService } from './app-service.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,6 +39,7 @@ const googleMapKey = AgmCoreModule.forRoot({
 
 const routes: Routes = [
   { path: '', component: HeaderComponent },
+  {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent, children: [
     {path: 'aboutMe', component: AboutmeAdminComponent},
     {path: 'skill', component: SkillAdminComponent},
@@ -45,7 +48,7 @@ const routes: Routes = [
     {path: 'awards', component: AwardsAdminComponent},
     {path: 'portofolio', component: PortofolioAdminComponent}
 
-  ]}
+  ], canActivate: [AuthGuardService]}
 ];
 
 
@@ -84,7 +87,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     AngularFireStorageModule
   ],
-  providers: [AppServiceService],
+  providers: [AppServiceService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
