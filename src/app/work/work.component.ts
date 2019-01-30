@@ -8,13 +8,14 @@ import { AngularFireDatabase } from '../../../node_modules/angularfire2/database
 })
 export class WorkComponent implements OnInit {
   works: any;
+  workReverse: any;
 
   constructor(private af: AngularFireDatabase) { }
 
   ngOnInit() {
     this.works = this.af.list('work').valueChanges();
     this.works.subscribe(data => {
-      console.log(data);
+      this.workReverse = data.reverse();
     });
   }
 

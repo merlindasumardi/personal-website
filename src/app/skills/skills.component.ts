@@ -23,8 +23,5 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit() {
     this.skill = this.af.list('skill').valueChanges();
-    this.skill.subscribe(data => {
-    console.log(data);
-    });
   }
 }

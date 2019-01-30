@@ -14,9 +14,6 @@ export class PortofolioComponent implements OnInit {
 
   ngOnInit() {
     this.portofolio = this.db.list('portofolio').valueChanges();
-    this.portofolio.subscribe(data => {
-      console.log(data);
-    });
   }
 
 }

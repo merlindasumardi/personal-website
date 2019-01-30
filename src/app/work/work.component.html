@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-9">
     <!--Timeline start-->
-    <ng-container *ngFor="let work of works | async; let i = index">
+    <ng-container *ngFor="let work of workReverse; let i = index">
         <!-- cd-timeline-block -->
         <div class="timeline">
            <div class="timelineWrap left" *ngIf="i % 2 == 0">

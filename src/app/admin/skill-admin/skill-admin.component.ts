@@ -65,7 +65,6 @@ export class SkillAdminComponent implements OnInit {
          finalize(() => {
            this.downloadURL = referenceId.getDownloadURL();
            this.downloadURL.subscribe(data => {
-            console.log(data);
             this.skillForm.value.skillImage = data;
           });
           } )
